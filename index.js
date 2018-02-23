@@ -9,13 +9,12 @@ class FreshEtag {
   /*
   * Try and get values from the cache if not return the header
   */
-  function cacheTry(name, headers = {}){
+  cacheTry(name, headers = {}){
     var filters = cache.get(name + 'Data');
 
     if(filters) {
       // Tests if the cache is still fresh if so return it.
       if(cache.get(name + 'Fresh')) {
-        log.debug(`ImagesRepositoryService::getClientFilters using cache`);
         return [new Promise(function(resolve, reject){resolve(filters);}), null];
       }
 
@@ -32,9 +31,9 @@ class FreshEtag {
   /*
   * Cache the response if needed or return the cached response if 304
   */
-  function cacheResponse(name, res){
+  cacheResponse(name, res){
     // No change since Etag, return cache.
-    if(res.status == 304) {return res;}
+    if(res.status == 304) {return cache.get(name + 'Data');}
     if(res.status == 200) {
       // The data has changed. Set the data for next time
       if(res.headers) {

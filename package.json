@@ -1,0 +1,28 @@
+{
+  "name": "fresh-or-etag",
+  "version": "0.0.1",
+  "description": "This checks if the cache is fresh, if so uses that. If not it adds an etag header and see if it can still use the cache.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NiallBunting/fresh-or-etag.git"
+  },
+  "keywords": [
+    "cache",
+    "etag",
+    "fresh",
+    "request"
+  ],
+  "author": "Niall Bunting (http://niallbunting.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NiallBunting/fresh-or-etag/issues"
+  },
+  "homepage": "https://github.com/NiallBunting/fresh-or-etag#readme",
+  "dependencies": {
+    "memory-cache": "^0.2.0"
+  }
+}
